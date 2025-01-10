@@ -75,4 +75,13 @@ export class DataService {
  public getAll() {
    return posts;
  }
+
+ public addPost(post: { title: string; text: string; image: string }) {
+     const newPost = {
+       ...post,
+       id: Math.random().toString(36).substr(2, 9)
+     };
+     posts.unshift(newPost);
+     return newPost;
+   }
 }
