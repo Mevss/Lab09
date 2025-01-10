@@ -1,6 +1,13 @@
-<div class="card" style="width: 48rem;" *ngFor="let item of items">
-  <blog-item [image]="item.image" [text]="item.text">
+<!--<div class="card" style="width: 48rem;" *ngFor="let item of items$">-->
+<!--  <blog-item [image]="item.image" [text]="item.text">-->
+<!--  </blog-item>-->
+<!--</div>-->
+<div class="card" style="width: 48rem;" *ngFor="let item of items$ | filter:filterText">
+  <blog-item
+    [image]="item.image"
+    [text]="item.text">
   </blog-item>
 </div>
+
 <<app-add-post></app-add-post>
-<gallery></gallery>
+<!--<gallery></gallery>-->
