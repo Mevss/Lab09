@@ -1,9 +1,9 @@
 <!-- add-post.component.html -->
 <div class="add-post-form">
-  <h2>Add New Post</h2>
+  <h2>Dodaj nowy post</h2>
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="title">Title:</label>
+      <label for="title">Tytuł:</label>
       <input
         id="title"
         type="text"
@@ -14,7 +14,7 @@
     </div>
 
     <div class="form-group">
-      <label for="text">Content:</label>
+      <label for="text">Zawartość:</label>
       <textarea
         id="text"
         [(ngModel)]="newPost.text"
@@ -24,7 +24,7 @@
     </div>
 
     <div class="form-group">
-      <label for="image">Image URL:</label>
+      <label for="image">URL zdjęcia:</label>
       <input
         id="image"
         type="url"
@@ -36,7 +36,7 @@
     <button type="submit"
             [disabled]="!newPost.title || !newPost.text"
             class="submit-button">
-      Add Post
+      Dodaj post
     </button>
   </form>
 </div>

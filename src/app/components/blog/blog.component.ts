@@ -3,11 +3,12 @@ import {DataService} from "../../services/data.service";
 import {BlogItemComponent} from "../blog-item/blog-item.component";
 import {CommonModule} from "@angular/common";
 import { AddPostComponent } from '../add-post/add-post.component';
+import { GalleryComponent } from '../gallery/gallery.component';
 
 @Component({
   selector: 'blog',
   standalone: true,
-  imports: [BlogItemComponent, CommonModule, AddPostComponent],
+  imports: [BlogItemComponent, CommonModule, AddPostComponent, GalleryComponent],
   providers: [DataService],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.css'

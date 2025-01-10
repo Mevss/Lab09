@@ -1,0 +1,20 @@
+<div class="gallery-container">
+  <h2>Galeria zdjęć</h2>
+
+  <div class="gallery-grid">
+    <div class="gallery-item" *ngFor="let item of images">
+      <img
+        [src]="item.image"
+        [alt]="item.title"
+        (click)="enlargeImage(item.image)"
+      >
+    </div>
+  </div>
+
+  <div class="modal" *ngIf="selectedImage" (click)="closeEnlargedImage()">
+    <div class="modal-content">
+      <span class="close" (click)="closeEnlargedImage()">&times;</span>
+      <img [src]="selectedImage" alt="Enlarged image">
+    </div>
+  </div>
+</div>
