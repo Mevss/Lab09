@@ -1,0 +1,35 @@
+<!--<p>blog works!</p>-->
+<!--<div *ngFor="let item of items">-->
+<!--  <blog-item [image]="item.image" [text]="item.text">-->
+<!--  </blog-item>-->
+<!--</div>-->
+
+<!--<div class="card" style="width: 36rem;" *ngFor="let item of items$ | filter:filterText">-->
+<!--  <blog-item-->
+<!--    [image]="item.image"-->
+<!--    [text]="item.text">-->
+<!--  </blog-item>-->
+<!--</div>-->
+<!--<div *ngFor="let item of items$ | filter:filterText">-->
+<!--  <blog-item-->
+<!--    [image]="item.image"-->
+<!--    [text]="item.text"-->
+<!--    [id]="item.id">-->
+<!--  </blog-item>-->
+<!--</div>-->
+
+<div>
+  @for(item of (items$ | filter:filterText); track item._id){
+  <blog-item
+    [image]="item.image"
+    [text]="item.text"
+    [id]="item._id">
+  </blog-item>
+  }
+</div>
+
+@if ((items$ | filter:filterText).length === 0) {
+<div class="no-results">
+  Brak wyników spełniających kryteria wyszukiwania
+</div>
+}
