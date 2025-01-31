@@ -1,0 +1,19 @@
+<div class="comments-section">
+  <h3>Komentarze</h3>
+
+  <ul>
+    <li *ngFor="let comment of comments">
+      {{ comment }}
+    </li>
+  </ul>
+
+  <form (ngSubmit)="addComment()" class="add-comment-form">
+    <textarea
+      [(ngModel)]="newComment"
+      placeholder="Dodaj komentarz..."
+      name="comment"
+      required
+    ></textarea>
+    <button class="btn btn-secondary button" type="submit">Dodaj komentarz</button>
+  </form>
+</div>

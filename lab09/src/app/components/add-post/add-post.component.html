@@ -1,0 +1,31 @@
+<div class="add-post-form">
+  <div *ngIf="authService.isLoggedIn(); else notLoggedIn">
+    <h2>Dodaj nowy post</h2>
+    <form #postForm="ngForm" (ngSubmit)="onSubmit(postForm)" class="container">
+      <div class="form-group">
+        <label for="title">Tytuł:</label>
+        <input type="text" id="title" name="title" ngModel required class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="text">Zawartość:</label>
+        <textarea id="text" name="text" ngModel required class="form-control"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="image">URL zdjęcia:</label>
+        <input type="text" id="image" name="image" ngModel class="form-control">
+      </div>
+
+      <button type="submit" class="btn btn-primary">
+        Add Post
+      </button>
+    </form>
+  </div>
+
+  <ng-template #notLoggedIn>
+    <div class="alert alert-warning">
+      Nie jesteś zalogowany! Zaloguj się aby dodać post.
+    </div>
+  </ng-template>
+</div>
