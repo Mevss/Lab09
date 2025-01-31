@@ -21,6 +21,9 @@ export class DataService {
       });
     }
 
+  deleteAllPosts() {
+    return this.http.delete(`${this.url}/api/posts`);
+  }
 
  getAll() {
    return this.http.get(this.url + '/api/posts');
