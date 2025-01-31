@@ -105,10 +105,18 @@ class PostController implements Controller {
     }
   };
 
-  private deleteAllEntries = async (request: Request, response: Response) => {
-    testArr = [];
-    response.status(200).json({ message: 'All entries deleted', testArr });
-  };
+//   private deleteAllEntries = async (request: Request, response: Response) => {
+//     testArr = [];
+//     response.status(200).json({ message: 'All entries deleted', testArr });
+//   };
+    private deleteAllEntries = async (request: Request, response: Response) => {
+      try {
+        await this.dataService.deleteData({});
+        response.status(200).json({ message: 'All posts deleted successfully' });
+      } catch (error) {
+        console.error('Error deleting posts:', error);
+        response.status(500).json({ error: 'An error occurred while deleting posts' });
+      }
+    };
 }
-
 export default PostController;
